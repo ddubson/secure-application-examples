@@ -1,4 +1,4 @@
-package com.ddubson.poc;
+package com.ddubson.poc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/jsp/");
+		resolver.setPrefix("WEB-INF/jsp/");
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}

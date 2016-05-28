@@ -7,7 +7,7 @@ CREATE  TABLE users (
   username VARCHAR(45) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(60) NOT NULL ,
-  enabled TINYINT NOT NULL DEFAULT 1 ,
+  enabled TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (userid));
 
 CREATE TABLE user_roles (
@@ -20,9 +20,9 @@ CREATE TABLE user_roles (
   CONSTRAINT fk_userid FOREIGN KEY (userid) REFERENCES users (userid));
 
 INSERT INTO users(username,email,password,enabled)
-VALUES ('dima','d.dubson@gmail.com','$2a$04$CO93CT2ObgMiSnMAWwoBkeFObJlMYi/wzzOnPlsTP44r7qVq0Jln2', true);
+VALUES ('dima','dima@gmail.com','$2a$08$w106mkuRGEtytWq7Sl.XMeVyACTJ1caK5dbofkXlgrhcsBpz69j.W', true);
 INSERT INTO users(username,email,password,enabled)
-VALUES ('sarah','sarah@gmail.com','$2a$04$j3JpPUp6CTAe.kMWmdRNC.Wie58xDNPfcYz0DBJxWkucJ6ekJuiJm', true);
+VALUES ('sarah','sarah@gmail.com','$2a$08$w106mkuRGEtytWq7Sl.XMeVyACTJ1caK5dbofkXlgrhcsBpz69j.W', true);
 
 INSERT INTO user_roles (userid, role)
 VALUES (001, 'ROLE_USER');
