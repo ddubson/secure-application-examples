@@ -1,0 +1,5 @@
+rootProject.name = 'todo'
+include 'authorization-server'
+include 'resource-server'
+include 'todo-client'
+

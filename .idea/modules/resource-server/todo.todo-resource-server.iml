@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../spring-security-oauth2-oidc-keycloak-authcode/todo-resource-server">
+      <excludeFolder url="file://$MODULE_DIR$/../../../spring-security-oauth2-oidc-keycloak-authcode/todo-resource-server/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../spring-security-oauth2-oidc-keycloak-authcode/todo-resource-server/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
