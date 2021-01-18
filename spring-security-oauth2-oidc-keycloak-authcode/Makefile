@@ -18,11 +18,11 @@ all-env-var-check: ## Ensure all required environment variables are present
 	$(call env_var_check,KEYCLOAK_PATH)
 	@echo "Ensure env vars are set in the environment"
 
-start-client:
-	@sh gradlew :todo-client:bootRun
+start-resource-server:
+	@sh gradlew :todo-resource-server:bootRun
 
-build-client:
-	@sh gradlew :todo-client:build
+clean:
+	@sh gradlew clean
 
 start-auth-server: all-env-var-check
 	$(KEYCLOAK_COMMAND)

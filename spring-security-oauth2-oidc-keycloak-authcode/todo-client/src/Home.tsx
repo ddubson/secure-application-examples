@@ -5,15 +5,15 @@ import {Accordion, AccordionTab} from "primereact/accordion";
 import {Button} from "primereact/button";
 import {Chip} from "primereact/chip";
 
-type IdentityDetails = {
-  id_token: string;
-  username: string;
-}
+type Todo = {
+  text: string
+};
 
 const Home: React.FC<{ oidc: UserManager }> = ({oidc}: { oidc: UserManager }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [accordionIndex, setAccordionIndex] = useState<number>(0);
   const [identityDetails, setIdentityDetails] = useState<User | undefined>();
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
     oidc.getUser().then((user: User | null) => {
@@ -21,13 +21,16 @@ const Home: React.FC<{ oidc: UserManager }> = ({oidc}: { oidc: UserManager }) =>
         setLoggedIn(true);
         setIdentityDetails(user);
 
-        console.log("User is logged in. ", user);
+        console.log("User is logged in. ");
         axios.get('/todos', {
           baseURL: 'http://localhost:9000',
           headers: {'Authorization': 'Bearer ' + user.access_token}
-        }).then((response: any) => {
-          console.log("Retrieved todos, ", response);
-        }).catch(console.error)
+        })
+          .then((response: any) => response.data)
+          .then((todos: Todo[]) => {
+              setTodos(todos);
+            }
+          ).catch(console.error)
       } else {
         setLoggedIn(false);
         setIdentityDetails(undefined);
@@ -45,7 +48,7 @@ const Home: React.FC<{ oidc: UserManager }> = ({oidc}: { oidc: UserManager }) =>
   }
 
   const renderUserDetails = () => (<>
-      <Chip className="p-p-2 p-my-4" template={<>Username: {identityDetails?.profile.preferred_username}</>} />
+      <Chip className="p-p-2 p-my-4" template={<>Username: {identityDetails?.profile.preferred_username}</>}/>
 
       <Accordion className="p-mb-4" activeIndex={accordionIndex} onTabChange={(e) => setAccordionIndex(e.index)}>
         <AccordionTab header="OpenID Connect token">
@@ -65,9 +68,14 @@ const Home: React.FC<{ oidc: UserManager }> = ({oidc}: { oidc: UserManager }) =>
         </AccordionTab>
       </Accordion>
 
+      <div>Todos (data from Resource Server):</div>
+      <ul>
+        {todos.map(todo => <li>{todo.text}</li>)}
+      </ul>
+
       <Button onClick={performLogout}>Log out</Button>
     </>
-  )
+  );
 
   return (
     <div>

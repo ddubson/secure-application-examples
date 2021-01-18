@@ -24,13 +24,6 @@
 - Create a new realm
 - Create a new client for the ToDo application
 
-## TODO
-
-- MVC Application with Thymeleaf
-- Authorization with OAuth 2.0 (Keycloak)
-    - Authorization Code Grant Type
-- Authentication with OpenID Connect
-
 ## Footnotes and Reference Material
 
 - [Creating a simple Spring MVC app](https://spring.io/guides/gs/serving-web-content/)
