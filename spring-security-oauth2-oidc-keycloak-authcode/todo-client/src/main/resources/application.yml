@@ -1,8 +1,0 @@
-server:
-  port: 9000
-
-keycloak:
-  auth-server-url: http://localhost:8080/auth
-  realm: secure_application_realm
-  resource: todo-app
-  public-client: true

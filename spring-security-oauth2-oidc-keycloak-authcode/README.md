@@ -1,10 +1,10 @@
-# Secure Spring Application Example
+# OAuth 2.0 and OpenID Connect example
 
 |OAuth Actor|Name|Port|
 |---|---|---|
 |Resource Owner|Registered User of ToDo Application|NA|
-|Client|ToDo Client|9000|
-|Resource Server|ToDo Resource Server|NA|
+|Client|ToDo Client (React App)|3000|
+|Resource Server|ToDo Resource Server|9000|
 |Authorization Server|Keycloak|8080/auth|
 
 ![OAuth Authorization Code Flow Ref](https://www.baeldung.com/wp-content/uploads/2020/08/AuthCodeFlowSequenceDiagram-1-768x632.png)
