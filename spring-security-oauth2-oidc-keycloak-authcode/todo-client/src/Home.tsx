@@ -81,7 +81,7 @@ const Home: React.FC<{ oidc: UserManager }> = ({oidc}: { oidc: UserManager }) =>
     <div>
       <h1>Welcome to a secure app!</h1>
       <section>
-        Keycloak Auth Server should be running at: http://localhost:8080/auth/
+        Tweak and configure @ <a target={"_blank"} rel={"noreferrer"} href="http://localhost:8080/auth/admin/master/console/#/realms/secure_application_realm">Keycloak Server: secure_application_realm</a>
       </section>
       <section>
         {loggedIn && renderUserDetails()}

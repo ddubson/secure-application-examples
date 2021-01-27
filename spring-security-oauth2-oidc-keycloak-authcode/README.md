@@ -11,18 +11,9 @@
 
 ## Requirements
 
-- **Keycloak 12.x**
-  - [Keycloak installation docs](https://www.keycloak.org/docs/latest/server_installation/index.html)
-  - Keycloak 12 default local path: `127.0.0.1:8080/auth`
-  - Operators:
-     - `make start-auth-server` - starts standalone server
-     - `make add-kc-user` -  adds a JBoss user
+- **Keycloak 12 up and runnning - [Install and launch docs](./docs/keycloak-setup.md)
 
-## Keycloak Setup
 
-- Create an admin user
-- Create a new realm
-- Create a new client for the ToDo application
 
 ## Footnotes and Reference Material
 
