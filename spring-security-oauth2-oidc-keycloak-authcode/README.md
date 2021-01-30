@@ -13,8 +13,6 @@
 
 - **Keycloak 12 up and runnning - [Install and launch docs](./docs/keycloak-setup.md)
 
-
-
 ## Footnotes and Reference Material
 
 - [Creating a simple Spring MVC app](https://spring.io/guides/gs/serving-web-content/)

@@ -37,8 +37,8 @@ add-kc-user: all-env-var-check
 	$(KEYCLOAK_ADD_USER_COMMAND)
 
 start:
-	@echo Choose and narrow down what you'd like to start.
-	@echo - start-todo-client
-	@echo - start-todo-resource-server
-	@echo - start-auth-server
-	@echo ---
+	@echo "Choose and narrow down what you'd like to start."
+	@echo "- start-todo-client"
+	@echo "- start-todo-resource-server"
+	@echo "- start-auth-server"
+	@echo "---"

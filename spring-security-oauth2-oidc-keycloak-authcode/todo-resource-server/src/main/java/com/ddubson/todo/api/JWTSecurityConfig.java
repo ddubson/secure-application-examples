@@ -10,10 +10,13 @@ import org.springframework.security.config.annotation.web.configurers.oauth2.ser
 public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		String readScope = "SCOPE_todo_read";
+		String writeScope = "SCOPE_todo_write";
+
 		http.cors().and().authorizeRequests(authz -> authz
-				.antMatchers(HttpMethod.GET, "/todos").hasAuthority("SCOPE_todo_read")
-				.antMatchers(HttpMethod.POST, "/todos").hasAuthority("SCOPE_todo_write")
-				.anyRequest().authenticated())
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+				.antMatchers(HttpMethod.GET, "/todos").hasAuthority(readScope)
+				.antMatchers(HttpMethod.POST, "/todos").hasAuthority(writeScope)
+				.anyRequest().authenticated()
+		).oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 	}
 }

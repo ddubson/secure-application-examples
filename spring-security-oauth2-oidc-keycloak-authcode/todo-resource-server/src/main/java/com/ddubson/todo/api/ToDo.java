@@ -1,7 +1,10 @@
 package com.ddubson.todo.api;
 
 public class ToDo {
-	private final String text;
+	String text;
+
+	public ToDo() {
+	}
 
 	public ToDo(String text) {
 		this.text = text;
@@ -9,5 +12,9 @@ public class ToDo {
 
 	public String getText() {
 		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
 	}
 }
