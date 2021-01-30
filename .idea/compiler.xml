@@ -4,10 +4,5 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="todo.todo-client" target="11" />
-      <module name="todo.todo-client.main" target="11" />
-      <module name="todo.todo-client.test" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

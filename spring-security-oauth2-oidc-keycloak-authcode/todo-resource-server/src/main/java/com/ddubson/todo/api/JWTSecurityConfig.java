@@ -14,8 +14,10 @@ public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
 		String writeScope = "SCOPE_todo_write";
 
 		http.cors().and().authorizeRequests(authz -> authz
-				.antMatchers(HttpMethod.GET, "/todos").hasAuthority(readScope)
-				.antMatchers(HttpMethod.POST, "/todos").hasAuthority(writeScope)
+				.antMatchers(HttpMethod.GET, "/todos").hasRole("todo_read")
+//				.antMatchers(HttpMethod.GET, "/todos").hasAuthority(readScope)
+				.antMatchers(HttpMethod.POST, "/todos").hasRole("todo_write")
+//				.antMatchers(HttpMethod.POST, "/todos").hasAuthority(writeScope)
 				.anyRequest().authenticated()
 		).oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 	}

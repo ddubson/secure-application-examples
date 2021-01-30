@@ -5,7 +5,7 @@ const config = {
   client_id: "todo_app",
   redirect_uri: "http://localhost:3000/callback",
   response_type: "code",
-  scope: "openid profile todo_read todo_write",
+  scope: "openid profile roles",
   post_logout_redirect_uri: "http://localhost:3000/logout",
 };
 
